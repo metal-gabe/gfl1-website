@@ -308,7 +308,19 @@
                      If you have any further questions or would like to chat about how my skills
                      could help you, please feel free to fill out the form below. Thanks!
                   </p>
-                  <form name="contact" method="POST" data-netlify="true">
+                  <form
+                     data-netlify="true"
+                     data-netlify-recaptcha="true"
+                     method="POST"
+                     name="contact"
+                     netlify-honeypot="bot-field"
+                  >
+                     <p class="hidden">
+                        <label>
+                           Don’t fill this out if you’re human:
+                           <input name="bot-field" type="text" />
+                        </label>
+                     </p>
                      <div class="row gtr-uniform">
                         <div class="col-6 col-12-xsmall">
                            <input
@@ -342,6 +354,7 @@
                               rows="6"
                            ></textarea>
                         </div>
+                        <div data-netlify-recaptcha="true"></div>
                         <div class="col-12">
                            <ul class="actions">
                               <li>
