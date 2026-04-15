@@ -1,0 +1,30 @@
+{
+   "name": "gfl1-website",
+   "packageManager": "yarn@4.13.0",
+   "scripts": {
+      "=========================================[ VANILLA ]=========================================": "",
+      "——————————————————————————————————————————[ LINT ]——————————————————————————————————————————": "",
+      "all:check": "echo '=====[ Running the `ALL:CHECK` script... ]====='; yarn run lint && yarn run type:check",
+      "··········································( eslint )": "",
+      "esl": "echo '=====[ Running the `ESL` script... ]====='; echo 'eslint . --color --ext .js,.jsx,.ts,.tsx,.vue'",
+      "··········································( prettier )": "",
+      "format": "echo '=====[ Running the `FORMAT` script... ]====='; echo 'prettier --check \"**/*.{html,js,json,md,scss,ts,vue}\" --ignore-path .gitignore'",
+      "··········································( combined )": "",
+      "lint": "echo '=====[ Running the `LINT` script... ]====='; echo 'yarn run esl && yarn run format && yarn run style'",
+      "lint:commit": "echo 'NOTE :: Run `check-for-leaks && lint-staged` once I figure out their output issues' && exit 0",
+      "··········································( stylelint )": "",
+      "style": "echo '=====[ Running the `STYLE` script... ]====='; echo 'stylelint . --color'",
+      "——————————————————————————————————————————[ UTILS ]——————————————————————————————————————————": "",
+      "··········································( analysis )": "",
+      "circ:check": "echo '=====[ Running the `CIRC:CHECK` script... ]====='; madge --circular .",
+      "code:review": "echo '=====[ Running the `CODE:REVIEW` script... ]====='; coderabbit review --plain --type committed",
+      "secrets:check": "echo '=====[ Running the `SECRETS:CHECK` script... ]====='; ggshield secret scan path . --recursive --yes",
+      "··········································( type-checking )": "",
+      "type:check": "echo '=====[ Running the `TYPE:CHECK` script... ]====='; echo 'vue-tsc --noEmit --project ./tsconfig.json'",
+      "——————————————————————————————————————————[ TEST ]——————————————————————————————————————————": "",
+      "test": "echo '=====[ Running the `TEST` script... ]====='; echo 'vitest run --config vite.config.ts'"
+   },
+   "devDependencies": {
+      "husky": "^9.1.7"
+   }
+}

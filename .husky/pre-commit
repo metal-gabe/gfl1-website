@@ -1,0 +1,11 @@
+#!/bin/sh
+# .husky/pre-commit
+
+EXIT_CODE=0
+
+yarn run secrets:check || EXIT_CODE=$?
+yarn run lint:commit || EXIT_CODE=$?
+yarn run circ:check || EXIT_CODE=$?
+
+echo "The \`pre-commit\` script has completed. Exiting with a code of ${EXIT_CODE}"
+exit $EXIT_CODE

@@ -1,0 +1,10 @@
+#!/bin/sh
+# .husky/pre-push
+
+EXIT_CODE=0
+
+yarn run type:check || EXIT_CODE=$?
+yarn run test || EXIT_CODE=$?
+
+echo "The \`pre-push\` script has completed. Exiting with a code of ${EXIT_CODE}"
+exit $EXIT_CODE
