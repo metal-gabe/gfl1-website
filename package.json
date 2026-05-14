@@ -11,7 +11,7 @@
       "format": "echo '=====[ Running the `FORMAT` script... ]====='; echo 'prettier --check \"**/*.{html,js,json,md,scss,ts,vue}\" --ignore-path .gitignore'",
       "··········································( combined )": "",
       "lint": "echo '=====[ Running the `LINT` script... ]====='; echo 'yarn run esl && yarn run format && yarn run style'",
-      "lint:commit": "echo 'NOTE :: Run `check-for-leaks && lint-staged` once I figure out their output issues' && exit 0",
+      "lint:commit": "echo 'NOTE :: Run `lint-staged` once I figure out their output issues' && exit 0",
       "··········································( stylelint )": "",
       "style": "echo '=====[ Running the `STYLE` script... ]====='; echo 'stylelint . --color'",
       "——————————————————————————————————————————[ UTILS ]——————————————————————————————————————————": "",
